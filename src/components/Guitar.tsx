@@ -1,4 +1,13 @@
-export default function Guitar({guitar, addToCart}) {
+import type { Guitar } from "../types/index.ts"
+
+type GuitarProps = {
+    guitar: Guitar
+    addToCart: (guitar: Guitar) => void
+}
+
+// Inline type definition
+// export default function Guitar({guitar, addToCart} : { guitar : Guitar, addToCart : (guitar: Guitar) => void }) {
+export default function Guitar({guitar, addToCart} : GuitarProps) {
 
     // Destructuring
     const { name, image, description, price } = guitar

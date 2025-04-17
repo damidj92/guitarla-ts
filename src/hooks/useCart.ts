@@ -1,9 +1,10 @@
 import { useEffect, useState, useMemo } from 'react'
 import { db } from '../data/db.js'
+import type { CartItem } from '../types/index.ts'
 
 export const useCart = () => {
 
-    const initialState = () => {
+    const initialState = () : CartItem[] => {
         const localStorageCart = localStorage.getItem("cart")
         return localStorageCart ? JSON.parse(localStorageCart) : []
     }
