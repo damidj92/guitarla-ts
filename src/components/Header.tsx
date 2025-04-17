@@ -1,4 +1,16 @@
-export default function Header({cart, removeToCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal}) {
+import type { Guitar, CartItem } from "../types/index.ts";
+
+type HeaderProps = {
+    cart: CartItem[]
+    removeToCart: (id: Guitar['id']) => void
+    increaseQuantity: (id: Guitar['id']) => void
+    decreaseQuantity: (id: Guitar['id']) => void
+    clearCart: () => void
+    isEmpty: boolean
+    cartTotal: number
+}
+
+export default function Header({cart, removeToCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal} : HeaderProps) {
 
     return (
         <header className="py-5 header">
